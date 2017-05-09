@@ -1,0 +1,2759 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="file://SHOnt.owl"
+     xml:base="file://SHOnt.owl"
+     xmlns:dc="http://purl.org/dc/terms/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:ffschema="http://www.thodoris.net/ontology/film-festival-model/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:SHOnt="file://SHOnt.owl#"
+     xmlns:t="http://purl.org/NET/c4dm/timeline.owl#"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="file://SHOnt.owl">
+        <SHOnt:Author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comillas Pontifical University, ICAI School of Engineering, Institute for Research in Technology (IIT)</SHOnt:Author>
+        <SHOnt:Author rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Javier JuÃ¡rez Montojo</SHOnt:Author>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SHOnt version 1.2.5
+</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smart Home Ontology (SHOnt)</rdfs:comment>
+        <owl:versionIRI rdf:resource="file://SHOnt.owl/1.2.5"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file://SHOnt.owl#Author -->
+
+    <owl:AnnotationProperty rdf:about="file://SHOnt.owl#Author"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file://SHOnt.owl#affectsEnvironmentalParameter -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#affectsEnvironmentalParameter">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">affectsEnvironmentalParameter</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">affectsParameter</skos:altLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#attachedTo -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#attachedTo">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attachedTo</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAttachedToAppliance</skos:altLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartPlug"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#consumes -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#consumes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consumes</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#PowerConsumption"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#isConsumptionOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#contains">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLocationOf</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spatialContains</skos:altLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Location"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#environmentalParameterOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#environmentalParameterOf">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmentalParameterOf</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Location"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#hasEnvironmentalParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#floorOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#floorOf">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">floorOf</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Floor"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#isInFloor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasActuator -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasActuator">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasActuator</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Actuator"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#isActuatorOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasAttached -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasAttached">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasAttached</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#SmartPlug"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#attachedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasCoordinates -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasCoordinates">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property to indicate the absolute coordinates of an object</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasCoordinates</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#LocationCoordinates"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasEnvironmentalParameter -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasEnvironmentalParameter">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasEnvironmentalParameter</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasFloor -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasFloor">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasFloor</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Building"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Floor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasRoom -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasRoom">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasRoom</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Building"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasSensor">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSensor</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#hasState -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#hasState">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has-device-state</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasDeviceState</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasPowerState</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasState</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#State"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#isStateOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isActuatorOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isActuatorOf">
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Actuator"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isAffectedBy">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isAffectedBy</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#affectsEnvironmentalParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isConsumptionOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isConsumptionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">consumptionOf</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isConsumptionOf</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#PowerConsumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isInBuilding -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isInBuilding">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isInBuilding</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Building"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Location"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#hasRoom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isInFloor -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isInFloor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isInFloor</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Floor"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isLocatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasLocation</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is-at-location</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isIn</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isLocatedIn</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">locatedAt</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">locatedIn</skos:altLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Location"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#contains"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isProvidedBy">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exposesDevice</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isProvidedBy</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Service"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#providesService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isSensorOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isSensorOf">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isSensorOf</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Sensor"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#hasSensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#isStateOf -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#isStateOf">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isStateOf</skos:prefLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#providesService -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#providesService">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isExposedByService</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">providesService</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#returnedBySensor -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#returnedBySensor">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">returnedBySensor</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="file://SHOnt.owl#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- file://SHOnt.owl#returnsParameter -->
+
+    <owl:ObjectProperty rdf:about="file://SHOnt.owl#returnsParameter">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasSensorParameter</skos:altLabel>
+        <rdfs:range rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#Sensor"/>
+        <owl:inverseOf rdf:resource="file://SHOnt.owl#returnedBySensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file://SHOnt.owl#altitude -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#altitude">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">altitude</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#LocationCoordinates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#email -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#email">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">email</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#environmentalValue -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#environmentalValue">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmentValue</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">environmentalValue</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#latitude -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#latitude">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latitude</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#LocationCoordinates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#level -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#level">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">level</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#longitude -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#longitude">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">longitude</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#LocationCoordinates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#manufacturer -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#manufacturer">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">manufacturer</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#meas_max -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#meas_max">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#meas_min -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#meas_min">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#model -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#model">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">model</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fullName</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#phoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#phoneNumber">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobilePhoneNumb</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobilePhoneNumber</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phone</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phoneNumber</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#powerValue -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#powerValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">powerValue</skos:prefLabel>
+        <rdfs:domain rdf:resource="file://SHOnt.owl#PowerConsumption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#stateValue -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#stateValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PowerStateValue</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deviceStatus</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stateValue</skos:prefLabel>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#unit -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#unit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">measuringUnit</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit</skos:prefLabel>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- file://SHOnt.owl#value -->
+
+    <owl:DatatypeProperty rdf:about="file://SHOnt.owl#value">
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">value</skos:prefLabel>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file://SHOnt.owl#Actuator -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Actuator">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Furniture"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Service"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Software"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Structural"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mechanism used to control actions of other elements, such as motors</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actuator</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ControlStyleDevice</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#AirCleaner -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#AirCleaner">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirCleaner</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirPurifier</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#AirConditioner -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#AirConditioner">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirConditioner</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Alarm -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Alarm">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alarm</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SecurityAlarm</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#AlarmClock -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#AlarmClock">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Clock"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AlarmClock</skos:prefLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clock used to wake someone up.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Amplifier -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Amplifier">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amplifier</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AudioAmplifier</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#AnsweringMachine -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#AnsweringMachine">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AnsweringMachine</skos:prefLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electronic device that answers the telephone and records messages.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Application -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Application">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Software"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Application</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Audio -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Audio">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Audio</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#BackYard -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#BackYard">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Yard"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#FrontYard"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A yard in the back of the house</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BackYard</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Bathing -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Bathing">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bathing</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Bathroom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Bathroom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bathroom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#BathroomScale -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#BathroomScale">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Scale"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BathroomScale</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Bed -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Bed">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Furniture"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bed</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Bedroom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Bedroom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bedroom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Blind -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Blind">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Structural"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blind</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#BodyCareDevice -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#BodyCareDevice">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BodyCareDevice</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Boiler -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Boiler">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boiler</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kettle</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sealed vessel where water is warm up.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#BrushingTeeth -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#BrushingTeeth">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BrushingTeeth</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Building -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Building">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Building</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">House</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#CDPlayer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#CDPlayer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Audio"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CDPlayer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#CO2Sensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#CO2Sensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#CO2level"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO2Sensor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#CO2level -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#CO2level">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO2</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CO2level</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Camera -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Camera">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camera</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Chair -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Chair">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Furniture"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chair</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Clock -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Clock">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device for measuring time.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clock</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#CoffeeMaker -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#CoffeeMaker">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoffeeMachine</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoffeeMaker</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Computer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Computer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A machine that performs calculations automatically.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Cooker -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Cooker">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An appliance used for cooking food.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cooker</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Cooking -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Cooking">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cooking</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KitchenADL</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Corridor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Corridor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corridor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#CurlingIron -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#CurlingIron">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#BodyCareDevice"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CurlingIron</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#DeepFreezer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#DeepFreezer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeepFreezer</skos:prefLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electric refrigerator in which food is frozen and stored for long periods of time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Device -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Device">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Furniture"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Service"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Software"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Structural"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appliance</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ApplianceCategory</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Device</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectriElectroAppliance</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Machine designed for a purpose.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#DiningRoom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#DiningRoom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DiningRoom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Dishwasher -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Dishwasher">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A machine for washing dishes</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dishwasher</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Display -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Display">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Display</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Door -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Door">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Structural"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Door</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Doorbell -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Doorbell">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Doorbell</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Dressing -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Dressing">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dressing</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Dryer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Dryer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device for drying something, especially the hair or laundry.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dryer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Dvd -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Dvd">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appliance thar read dvd</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DVDPlayer</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dvd</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Eating -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Eating">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eating</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#ElectricalCooker -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#ElectricalCooker">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Cooker"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricalCooker</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#ElectricalOven -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#ElectricalOven">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Oven"/>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#ElectricityMeter -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#ElectricityMeter">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Meter"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectricityMeter</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#ElectronicToothbrush -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#ElectronicToothbrush">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#BodyCareDevice"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ElectronicToothbrush</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toothbrush</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Entertainment -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Entertainment">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EntertainmentDevice</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MediaAppliance</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#EnvironmentalCondition -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#EnvironmentalCondition">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeContext"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Environment</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EnvironmentalCondition</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EnvironmentalParameter</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SensorParameter</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Fan -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Fan">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device for creating a current of air</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fan</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Fax -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Fax">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appliance that send text and document.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fax</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#FireAlarm -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#FireAlarm">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FireAlarm</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Floor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Floor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Floor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Fridge -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Fridge">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A refrigerator.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fridge</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Refrigerator</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#FrontYard -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#FrontYard">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Yard"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A yard in the front of the house</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FrontYard</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Furniture -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Furniture">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Sensor"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Service"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Software"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Furnishing</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Furniture</skos:prefLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The movable articles that are used to make a room or building suitable for living or working in, such as tables, chairs, or desks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Garden -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Garden">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#OutdoorLocation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An area of land used for growing flowers, fruits, or vegetables.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Garden</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#GasCooker -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#GasCooker">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Cooker"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GasCooker</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#GasMeter -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#GasMeter">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Meter"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GasMeter</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Hairdryer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Hairdryer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#BodyCareDevice"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hairdryer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Hall -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Hall">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hall</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Heater -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Heater">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device for warming the air or water.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heater</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#HiFi -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#HiFi">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Audio"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equipment for the reproduction of sound with high fidelity</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HiFi</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Humidity -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Humidity">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Humidity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#HumiditySensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#HumiditySensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#Humidity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HumiditySenser</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HumisditySensing</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#IndoorLocation -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#IndoorLocation">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Location"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indoor</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indoor home space</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IndoorLocation</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inside</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Interphone -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Interphone">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A telephonic intercommunication system linking different rooms in a building.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interphone</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Iron -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Iron">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iron</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Jacuzzi -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Jacuzzi">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#BodyCareDevice"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jacuzzi</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Kitchen -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Kitchen">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kitchen</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#KitchenScale -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#KitchenScale">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Scale"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KitchenScale</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Laptop -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Laptop">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Computer"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laptop</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortablePC</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortablePersonalComputer</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Lighting -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Lighting">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lamp</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Light</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LightBulb</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LightFixture</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lighting</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#LivingRoom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#LivingRoom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LivingRoom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Location -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Location">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeContext"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BuildingEnvironment</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Models places of the Smart Home</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Place</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Space</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SymbolicLocation</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#LocationCoordinates -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#LocationCoordinates">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Location"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Absolute coordinates</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AbsoluteLocation</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AbsoluteLocationInformation</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LocationCoordinates</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Luminance -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Luminance">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ilumination</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luminance</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuminousIntensity</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brightness</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#LuminanceSensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#LuminanceSensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#Luminance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BrightnessSensing</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LightSensor</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LightingSensor</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuminanceSensor</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LuminositySensor</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Meter -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Meter">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meter</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Microcontroller -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Microcontroller">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Computer"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Microcontroller</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Microphone -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Microphone">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MIC</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Microphone</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#MicrowaveOven -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#MicrowaveOven">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Oven"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An oven in which food is cooked by microwaves.</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Microwave</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MicrowaveOven</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Middleware -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Middleware">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Software"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Middleware</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#MobilePhone -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#MobilePhone">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Phone"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CellPhone</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CelularPhone</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mobile-Phone</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phone with no wire</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WirelessPhone</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WirelessPhone</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#MovementSensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#MovementSensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MotionSensor</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MovementSensor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Noise -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Noise">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loudness</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Noise</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoiseLevel</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#NoiseSensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#NoiseSensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#Noise"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LoudnessSensing</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NoiseSensor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Office -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Office">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Office</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#OperatingSystem -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#OperatingSystem">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Software"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OS</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OperatingSystem</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#OutdoorLocation -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#OutdoorLocation">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Location"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outdoor</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outdoor home space</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OutdoorLocation</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outside</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Oven -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Oven">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kitchen appliance used for baking or roasting</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oven</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Patio -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Patio">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#OutdoorLocation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An outdoor space that is paved</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patio</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#PersonalComputer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#PersonalComputer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Computer"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DesktopComputer</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PC</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PersonalComputer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Phone -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Phone">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Appliance to comunicate with other person</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phone</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Telephone</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Polisher -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Polisher">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polisher</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#PowerConsumption -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#PowerConsumption">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntityCharacteristic"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#State"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Consumption</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PowerConsumption</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Pressure -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Pressure">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pressure</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#PressureSensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#PressureSensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#Pressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PressureSensor</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Printer -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Printer">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Output device that prints</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Printer</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Projector -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Projector">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Projector</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Radiator -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Radiator">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Radio -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Radio">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A communication system based on broadcasting electromagnetic waves</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radio</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Reading -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Reading">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reading</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Room -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Room">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Room</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Router -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Router">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Router</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Scale -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Scale">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scale</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WeighingScale</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Scanner -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Scanner">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scanner</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Sensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Sensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Service"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Software"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Structural"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An object which detects or measures a physical property.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sensor</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SensorStyleDevice</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Service -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Service">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Structural"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Functionality provided by a device or a software program</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Service</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Showering -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Showering">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Showering</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Sleeping -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Sleeping">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sleeping</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartHomeActivity -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartHomeActivity">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Activity</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Models user activities</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartHomeActivity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartHomeContext -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartHomeContext">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Context</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ContextInformation</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Models information related to locations, people, time and environmental conditions.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartHomeContext</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartHomeEntity -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartHomeEntity">
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artifact</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BuildingEquipment</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BuildingThing</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CompEntity</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ComputingEntity</skos:altLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Models physical entities involved in the Smart Home system</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Object</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysicalObject</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartHomeEntity</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartHomeEntityCharacteristic -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartHomeEntityCharacteristic">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Models states, parameters, values and other characteristics of home entities</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartHomeEntityCharacteristic</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartPhone -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartPhone">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Computer"/>
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Phone"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartPhone</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#SmartPlug -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#SmartPlug">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartOutlet</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SmartPlug</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Sofa -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Sofa">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Furniture"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sofa</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Software -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Software">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <owl:disjointWith rdf:resource="file://SHOnt.owl#Structural"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Program used in a computer system</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Software</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Speaker -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Speaker">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AudioSpeakers</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loudspeaker</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Speaker</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Sprinkler -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Sprinkler">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device that sprays water.</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sprinkler</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Stair -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Stair">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#IndoorLocation"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stair</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#State -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#State">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntityCharacteristic"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A particular condition that something is in at a specific time.</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeviceState</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OnOffState</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PowerState</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">State</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#StorageRoom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#StorageRoom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StorageRoom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Structural -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Structural">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structural</skos:prefLabel>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Structural elements of the environment</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StructuralThing</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#StudyRoom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#StudyRoom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StudyRoom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Table -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Table">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Furniture"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Table</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Temperature -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Temperature">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#EnvironmentalCondition"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#TemperatureSensor -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#TemperatureSensor">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="file://SHOnt.owl#returnsParameter"/>
+                <owl:someValuesFrom rdf:resource="file://SHOnt.owl#Temperature"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TemperatureSensing</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TemperatureSensor</skos:prefLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermometer</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Thermostat -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Thermostat">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thermostat</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Time -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Time">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeContext"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Time</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Toaster -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Toaster">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toaster</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Tv -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Tv">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Entertainment"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A receiver that displays television images</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Television</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tv</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#User -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#User">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeEntity"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Actor</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#VacuumCleaner -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#VacuumCleaner">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A device that by means of suction collects dust and small particles from floors and other surfaces.</rdfs:comment>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cleaner</skos:altLabel>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vacuum</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VacuumCleaner</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Walking -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Walking">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Walking</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#WallClock -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#WallClock">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Clock"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WallClock</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#WashingMachine -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#WashingMachine">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Device"/>
+        <skos:altLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Washer</skos:altLabel>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WashingMachine</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#WashingRoom -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#WashingRoom">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Room"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WashingRoom</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#WatchingTV -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#WatchingTV">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#SmartHomeActivity"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WatchingTV</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#WaterMeter -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#WaterMeter">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Meter"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WaterMeter</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Window -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Window">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#Structural"/>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Window</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- file://SHOnt.owl#Yard -->
+
+    <owl:Class rdf:about="file://SHOnt.owl#Yard">
+        <rdfs:subClassOf rdf:resource="file://SHOnt.owl#OutdoorLocation"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A piece of bounded ground</rdfs:comment>
+        <skos:prefLabel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yard</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file://SHOnt.owl#AirConditionerDown -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#AirConditionerDown">
+        <rdf:type rdf:resource="file://SHOnt.owl#AirConditioner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#AirConditionerUp -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#AirConditionerUp">
+        <rdf:type rdf:resource="file://SHOnt.owl#AirConditioner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Android -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Android">
+        <rdf:type rdf:resource="file://SHOnt.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ArmChair -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ArmChair">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedDown -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedDown">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedRoomParents -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedRoomParents">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedUp1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedUp1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedUp2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedUp2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bed"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedroomChild1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedroomChild1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#BedroomChild2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#BedroomChild2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Bedroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairDown1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairDown1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairDown2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairDown2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairDown3 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairDown3">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairDown4 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairDown4">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairUp1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairUp1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ChairUp2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ChairUp2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Chair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#CoffeeMaker -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#CoffeeMaker">
+        <rdf:type rdf:resource="file://SHOnt.owl#CoffeeMaker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ComputerSteva -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ComputerSteva">
+        <rdf:type rdf:resource="file://SHOnt.owl#PersonalComputer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Cooker -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Cooker">
+        <rdf:type rdf:resource="file://SHOnt.owl#ElectricalCooker"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Couch -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Couch">
+        <rdf:type rdf:resource="file://SHOnt.owl#Sofa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#DeepFreezer -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#DeepFreezer">
+        <rdf:type rdf:resource="file://SHOnt.owl#DeepFreezer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#DishWasher -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#DishWasher">
+        <rdf:type rdf:resource="file://SHOnt.owl#Dishwasher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Doorbell -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Doorbell">
+        <rdf:type rdf:resource="file://SHOnt.owl#Doorbell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Dryer -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Dryer">
+        <rdf:type rdf:resource="file://SHOnt.owl#Dryer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Dvd -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Dvd">
+        <rdf:type rdf:resource="file://SHOnt.owl#CDPlayer"/>
+        <rdf:type rdf:resource="file://SHOnt.owl#Dvd"/>
+        <rdf:type rdf:resource="file://SHOnt.owl#Radio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#ElectricalOven -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#ElectricalOven">
+        <rdf:type rdf:resource="file://SHOnt.owl#ElectricalOven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Fan -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Fan">
+        <rdf:type rdf:resource="file://SHOnt.owl#Fan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Floor1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Floor1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Floor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Floor2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Floor2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Floor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Fridge -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Fridge">
+        <rdf:type rdf:resource="file://SHOnt.owl#Fridge"/>
+        <SHOnt:hasSensor rdf:resource="file://SHOnt.owl#SensorTempreture1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Hall -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Hall">
+        <rdf:type rdf:resource="file://SHOnt.owl#Hall"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#IOS -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#IOS">
+        <rdf:type rdf:resource="file://SHOnt.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Interphone -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Interphone">
+        <rdf:type rdf:resource="file://SHOnt.owl#Interphone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Iron -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Iron">
+        <rdf:type rdf:resource="file://SHOnt.owl#Iron"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Kitchen -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Kitchen">
+        <rdf:type rdf:resource="file://SHOnt.owl#Kitchen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#LapTopIsi -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#LapTopIsi">
+        <rdf:type rdf:resource="file://SHOnt.owl#Laptop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#LapTopJeca -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#LapTopJeca">
+        <rdf:type rdf:resource="file://SHOnt.owl#Laptop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Livingroom -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Livingroom">
+        <rdf:type rdf:resource="file://SHOnt.owl#LivingRoom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#MACos -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#MACos">
+        <rdf:type rdf:resource="file://SHOnt.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#MicrowaveOven -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#MicrowaveOven">
+        <rdf:type rdf:resource="file://SHOnt.owl#MicrowaveOven"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#MobileIsi -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#MobileIsi">
+        <rdf:type rdf:resource="file://SHOnt.owl#SmartPhone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#MobileJesa -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#MobileJesa">
+        <rdf:type rdf:resource="file://SHOnt.owl#SmartPhone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#MobileSteva -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#MobileSteva">
+        <rdf:type rdf:resource="file://SHOnt.owl#SmartPhone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#OffState -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#OffState">
+        <rdf:type rdf:resource="file://SHOnt.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#OnState -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#OnState">
+        <rdf:type rdf:resource="file://SHOnt.owl#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorDownBedRoom -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorDownBedRoom">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorDownHall -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorDownHall">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorDownLivingroom -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorDownLivingroom">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorDownWc -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorDownWc">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorUp1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorUp1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#RadiatorUp2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#RadiatorUp2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Radiator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Router -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Router">
+        <rdf:type rdf:resource="file://SHOnt.owl#Router"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorLuminance1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorLuminance1">
+        <rdf:type rdf:resource="file://SHOnt.owl#LuminanceSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorLuminance2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorLuminance2">
+        <rdf:type rdf:resource="file://SHOnt.owl#LuminanceSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorLuminance3 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorLuminance3">
+        <rdf:type rdf:resource="file://SHOnt.owl#LuminanceSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorLuminance4 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorLuminance4">
+        <rdf:type rdf:resource="file://SHOnt.owl#LuminanceSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorMovment1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorMovment1">
+        <rdf:type rdf:resource="file://SHOnt.owl#MovementSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorNoise1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorNoise1">
+        <rdf:type rdf:resource="file://SHOnt.owl#NoiseSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorTempreture1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorTempreture1">
+        <rdf:type rdf:resource="file://SHOnt.owl#TemperatureSensor"/>
+        <SHOnt:isSensorOf rdf:resource="file://SHOnt.owl#Fridge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorTempreture2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorTempreture2">
+        <rdf:type rdf:resource="file://SHOnt.owl#TemperatureSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#SensorTempreture3 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#SensorTempreture3">
+        <rdf:type rdf:resource="file://SHOnt.owl#TemperatureSensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Stair -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Stair">
+        <rdf:type rdf:resource="file://SHOnt.owl#Stair"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TableKitchen -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TableKitchen">
+        <rdf:type rdf:resource="file://SHOnt.owl#Table"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TableLearnDown -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TableLearnDown">
+        <rdf:type rdf:resource="file://SHOnt.owl#Table"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TableLearnUp1 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TableLearnUp1">
+        <rdf:type rdf:resource="file://SHOnt.owl#Table"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TableLearnUp2 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TableLearnUp2">
+        <rdf:type rdf:resource="file://SHOnt.owl#Table"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TableLivingroom -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TableLivingroom">
+        <rdf:type rdf:resource="file://SHOnt.owl#Table"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TempretureHigh -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TempretureHigh">
+        <rdf:type rdf:resource="file://SHOnt.owl#Temperature"/>
+        <SHOnt:meas_min rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</SHOnt:meas_min>
+        <SHOnt:meas_max rdf:datatype="http://www.w3.org/2001/XMLSchema#string">80</SHOnt:meas_max>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TempretureLow -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TempretureLow">
+        <rdf:type rdf:resource="file://SHOnt.owl#Temperature"/>
+        <SHOnt:meas_min rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-30</SHOnt:meas_min>
+        <SHOnt:meas_max rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</SHOnt:meas_max>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TempretureNormal -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TempretureNormal">
+        <rdf:type rdf:resource="file://SHOnt.owl#Temperature"/>
+        <SHOnt:meas_min rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</SHOnt:meas_min>
+        <SHOnt:meas_max rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</SHOnt:meas_max>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Toaster -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Toaster">
+        <rdf:type rdf:resource="file://SHOnt.owl#Toaster"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TvDown -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TvDown">
+        <rdf:type rdf:resource="file://SHOnt.owl#Tv"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#TvUp -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#TvUp">
+        <rdf:type rdf:resource="file://SHOnt.owl#Tv"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#UserIsidora -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#UserIsidora">
+        <rdf:type rdf:resource="file://SHOnt.owl#User"/>
+        <SHOnt:phoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0605222024</SHOnt:phoneNumber>
+        <SHOnt:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Isidora</SHOnt:name>
+        <SHOnt:email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">isibojovic@gmail.com</SHOnt:email>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#UserJelena -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#UserJelena">
+        <rdf:type rdf:resource="file://SHOnt.owl#User"/>
+        <SHOnt:phoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0605123451</SHOnt:phoneNumber>
+        <SHOnt:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jelena</SHOnt:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#UserStevan -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#UserStevan">
+        <rdf:type rdf:resource="file://SHOnt.owl#User"/>
+        <SHOnt:phoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">063212246</SHOnt:phoneNumber>
+        <SHOnt:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stevan</SHOnt:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#VacuumCleaner -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#VacuumCleaner">
+        <rdf:type rdf:resource="file://SHOnt.owl#VacuumCleaner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#WashingMachine -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#WashingMachine">
+        <rdf:type rdf:resource="file://SHOnt.owl#WashingMachine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- file://SHOnt.owl#Windows10 -->
+
+    <owl:NamedIndividual rdf:about="file://SHOnt.owl#Windows10">
+        <rdf:type rdf:resource="file://SHOnt.owl#OperatingSystem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#SmartHomeActivity"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#SmartHomeContext"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#SmartHomeEntity"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#SmartHomeEntityCharacteristic"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#EnvironmentalCondition"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Location"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Time"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#Building"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Corridor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Floor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Room"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Stair"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#CO2level"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Humidity"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Luminance"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Noise"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Pressure"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Temperature"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#Bathroom"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Building"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Corridor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Floor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Stair"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#Building"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Corridor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Floor"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Kitchen"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#Stair"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="file://SHOnt.owl#IndoorLocation"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#LocationCoordinates"/>
+            <rdf:Description rdf:about="file://SHOnt.owl#OutdoorLocation"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
